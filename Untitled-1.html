@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Distortion Hover Effect | Codrops</title>
+    <link rel="shortcut icon" href="favicon.ico" />
+    <link rel="stylesheet" type="text/css" href="css/base.css" />
+    <script>
+      document.documentElement.className = "js";
+      var supportsCssVars = function () {
+        var e,
+          t = document.createElement("style");
+        return (
+          (t.innerHTML = "root: { --tmp-var: bold; }"),
+          document.head.appendChild(t),
+          (e = !!(
+            window.CSS &&
+            window.CSS.supports &&
+            window.CSS.supports("font-weight", "var(--tmp-var)")
+          )),
+          t.parentNode.removeChild(t),
+          e
+        );
+      };
+      supportsCssVars() ||
+        alert(
+          "Please view this demo in a modern browser that supports CSS Variables."
+        );
+    </script>
+  </head>
+  <body>
+    <main>
+      <div class="message">Some message for mobile if needed.</div>
+      <div class="grid">
+        <div class="grid__item grid__item--bg theme-2">
+          <div
+            class="grid__item-img"
+            data-displacement="img/displacement/8.jpg"
+            data-intensity="-0.65"
+            data-speedIn="1.2"
+            data-speedOut="1.2"
+          >
+            <img src="img/Img22.jpg" alt="Image" />
+            <img src="img/Img21.jpg" alt="Image" />
+          </div>
+          <div class="grid__item-content">
+            <span class="grid__item-meta">California</span>
+            <h2 class="grid__item-title">Jumping Around</h2>
+            <h3 class="grid__item-subtitle">
+              <span>California's last empty jump spots</span>
+              <a class="grid__item-link" href="#">Discover more</a>
+            </h3>
+          </div>
+        </div>
+      </div>
+    </main>
+    <script src="js/three.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.3/TweenMax.min.js"></script>
+    <script src="js/hover.js"></script>
+    <script>
+      Array.from(document.querySelectorAll(".grid__item-img")).forEach((el) => {
+        const imgs = Array.from(el.querySelectorAll("img"));
+        new hoverEffect({
+          parent: el,
+          intensity: el.dataset.intensity || undefined,
+          speedIn: el.dataset.speedin || undefined,
+          speedOut: el.dataset.speedout || undefined,
+          easing: el.dataset.easing || undefined,
+          hover: el.dataset.hover || undefined,
+          image1: imgs[0].getAttribute("src"),
+          image2: imgs[1].getAttribute("src"),
+          displacementImage: el.dataset.displacement,
+        });
+      });
+    </script>
+  </body>
+</html>

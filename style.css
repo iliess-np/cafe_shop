@@ -143,25 +143,21 @@ nav ul {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
 }
+
 .bay_div_coffee,
 .bay_div_tea {
-  /* background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.1)),
-    url(images/coffee.jpg); */
-  background-repeat: no-repeat;
-  background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.1)),
-    url(images/coffee.jpg);
-  background-position: center;
-  background-repeat: no-repeat;
-  height: 100vh;
   position: relative;
+  height: 100vh;
+  width: 100%;
 }
-.bay_div_tea {
-  background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.1)),
-    url(images/tea.jpg);
-  background-repeat: no-repeat;
-  background-position: center;
-  background-repeat: no-repeat;
+.bay_div_coffee img,
+.bay_div_tea img {
+  z-index: -1;
+  position: absolute;
+  width: 100%;
+  height: 100%;
 }
+
 .bay_div_coffee h1,
 .bay_div_tea h1 {
   position: absolute;
@@ -252,7 +248,7 @@ nav ul {
 
 footer {
   width: 100%;
-  height: 60vh;
+  height: 70vh;
   display: flex;
   flex-direction: column;
 }
@@ -264,6 +260,7 @@ footer {
   background-attachment: fixed;
   background-size: cover;
 }
+
 .container {
   display: flex;
   flex-direction: row;
