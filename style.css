@@ -170,7 +170,7 @@ nav ul {
 .bay_div_tea h1 {
   color: rgb(32, 172, 182);
 }
-.bay_div_tea h1:nth-child(2) {
+.bay_div_tea h1:nth-child(4) {
   position: absolute;
   top: 50%;
   left: 60%;
