@@ -190,6 +190,11 @@ nav ul {
   border: solid 1px rgb(255, 255, 255);
   transition: all 0.2s ease-in;
 }
+.bay_div_coffee button a,
+.bay_div_tea button a {
+  text-decoration: none;
+  color: white;
+}
 .bay_div_tea button {
   background: rgb(32, 172, 182);
   outline: none;
